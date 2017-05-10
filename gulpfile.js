@@ -19,6 +19,7 @@ var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
 var del = require('del');
 var zip = require('gulp-zip');
+var uncss = require('gulp-uncss');
 
 
 // Image compression
@@ -79,6 +80,9 @@ gulp.task('styles', function (cb) {
 
 
 
+
+
+
 // Styles for SCSS
 
 gulp.task('styles', (cb) => {
@@ -91,10 +95,19 @@ gulp.task('styles', (cb) => {
                 console.log(err);
                 this.emit('end');
             }),
+            autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }),
+
             sourcemaps.init(),
-            autoprefixer(),
-            sass({outputStyle: 'compressed'}).on('error', sass.logError),
-            sourcemaps.write('.'),
+            sass({sourcemap: true, style: 'compact', outputStyle:'compressed'}).on('error', sass.logError),
+            uncss({
+                html: ['public/**/*.html']
+            }),
+
+
+             sourcemaps.write('.'),
             gulp.dest(DIST_PATH + '/css'),
             livereload()
         ],
@@ -124,7 +137,10 @@ gulp.task('custom-styles', (cb) => {
             autoprefixer(),
             concat('custom.css'),
 
-            sass({outputStyle: 'compressed'}).on('error', sass.logError),
+            sass({sourcemap: true, style: 'compact', outputStyle:'compressed'}).on('error', sass.logError),
+            uncss({
+                html: ['public/**/*.html']
+            }),
 
             sourcemaps.write('.'),
             gulp.dest(DIST_PATH_HTML + '/css'),
@@ -153,6 +169,10 @@ gulp.task('fa-styles', function (cb) {
             }),
             sourcemaps.init(),
             autoprefixer(),
+            uncss({
+                html: ['public/**/*.html']
+            }),
+
             concat('fa.css'),
 
             cleanCSS(),
@@ -164,6 +184,17 @@ gulp.task('fa-styles', function (cb) {
         cb
     );
 
+});
+
+
+gulp.task('fonts', function(cb) {
+    pump([
+        gulp.src([
+        'node_modules/bootstrap-sass/assets/fonts/**/*']),
+             gulp.dest(DIST_PATH + '/fonts'),
+        ],
+        cb
+    );
 });
 
 
@@ -336,9 +367,9 @@ gulp.task('clean', () => {
 gulp.task('export', (cb) =>{
 
 pump([
-        gulp.src('public/**/*'),
+        gulp.src('public/_build/**/*'),
         zip('website.zip'),
-        gulp.dest('./'),
+        gulp.dest('./public')
     ],
      cb
     );
@@ -367,7 +398,7 @@ gulp.task('html', (cb) =>{
 
 // Default
 
-gulp.task('default',['clean', 'html', 'images', 'styles', 'custom-styles', 'fa-styles', 'scripts','custom-scripts', 'fa-scripts', 'scripts-plugin'], () => {
+gulp.task('default',['clean', 'html', 'images', 'styles', 'custom-styles', 'fa-styles', 'scripts','custom-scripts', 'fa-scripts', 'scripts-plugin', 'fonts'], () => {
     console.log('----------Starting Default Task----------');
 
 });

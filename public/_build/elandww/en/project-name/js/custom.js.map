@@ -1,1 +1,0 @@
-{"version":3,"sources":["custom.js"],"names":["custom","document","write"],"mappings":"YAAA,IAAIA,QAAS,qBACbC,UAASC,MAAMF","file":"custom.js","sourcesContent":["var custom = 'this is a custom JS';\ndocument.write(custom);\n"]}
