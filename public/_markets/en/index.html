@@ -95,6 +95,24 @@
         }
         setTimeout(optimizelyTimeout, 1000);
 
+
+        // Tealium Tracking Tag
+
+        var utag_data = {};
+
+        (function (a, b, c, d) {
+            "use strict";
+            a = '//tags.tiqcdn.com/utag/kaplan2/kie-english/prod/utag.js';
+            b = document;
+            c = 'script';
+            d = b.createElement(c);
+            d.src = a;
+            d.type = 'text/java' + c;
+            d.async = true;
+            a = b.getElementsByTagName(c)[0];
+            a.parentNode.insertBefore(d, a);
+        })();
+
     </script>
 
 
@@ -305,17 +323,12 @@
 
 
 <!-- Scripts -->
-<script src="../../_assets/project-name/js/plugins.js" async></script>
+<script src="../../_assets/project-name/js/plugins.js"></script>
 <script src="../../en/project-name/fa/fa.js"></script>
-
-
 <script src="../../_assets/project-name/js/scripts.js"></script>
-<script src="../../en/project-name/js/custom.js" async></script>
+<script src="../../en/project-name/js/custom.js"></script>
 
 
-<script type="text/javascript">
-    wFORMS.behaviors.prefill.skip = false;
-</script>
 
 
 <!--<script src="http://localhost:35729/livereload.js"></script>-->
