@@ -54,7 +54,7 @@ var IMGAGES_PATH = 'public/images/**/*.{png,jpeg,jpg,svg,gif}';
 // Styles for Solid CSS
 /*
 
-gulp.task('styles', function (cb) {
+gulp.task('solid-styles', function (cb) {
     console.log('----------Starting Styles Task----------');
 
     pump([
@@ -271,7 +271,7 @@ gulp.task('fa-scripts', (cb) => {
     console.log('----------Starting Scripts Task----------');
 
     pump([
-            gulp.src(['public/_markets/' + MARKET + '/fa/*.js']),
+            gulp.src(['public/_markets/' + MARKET + '/fa/wforms.js', 'public/_markets/' + MARKET + '/fa/*.js']),
             plumber(function (err) {
                 console.log('Scripts Task Error');
                 console.log(err);

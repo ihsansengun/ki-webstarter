@@ -55,37 +55,46 @@
     <meta property="fb:admins" content="">
 
 
-
     <!-- CSS -->
-    <link rel="stylesheet" href="../../_assets/project-name/css/styles.css">
+    <link rel="preload" href="../../_assets/project-name/css/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../../_assets/project-name/css/styles.css">
+    </noscript>
 
-    <!-- FORM: CSS -->
-    <link rel="stylesheet" href="../../en/project-name/fa/fa.css">
+    <link rel="preload" href="../../en/project-name/fa/fa.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../../en/project-name/fa/fa.css">
+    </noscript>
+
+    <link rel="preload" href="../../en/project-name/css/custom.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../../en/project-name/css/custom.css">
+    </noscript>
 
 
-
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="../../en/project-name/css/custom.css">
-
-
-    <script src="//cdn.optimizely.com/js/4238035597.js"></script>
-
+    <!-- Optimizely -->
     <script type="text/javascript">
-        var utag_data = {};
-    </script>
-    <!-- Tealium Tracking Tag -->
-    <script type="text/javascript">
-        (function (a, b, c, d) {
-            a = '//tags.tiqcdn.com/utag/kaplan2/kie-english/prod/utag.js';
-            b = document;
-            c = 'script';
-            d = b.createElement(c);
-            d.src = a;
-            d.type = 'text/java' + c;
-            d.async = true;
-            a = b.getElementsByTagName(c)[0];
-            a.parentNode.insertBefore(d, a);
+
+        (function () {
+            var projectId = ['4238035597'];
+            var protocol = ('https:' == document.location.protocol ?
+                'https://' : 'http://');
+            var scriptTag = document.createElement('script');
+            scriptTag.type = 'text/javascript';
+            scriptTag.async = true;
+            scriptTag.src = protocol + 'cdn.optimizely.com/js/' +
+                projectId + '.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(scriptTag, s);
         })();
+        function optimizelyTimeout() {
+            window.optimizely = window.optimizely || [];
+            if (!window.optimizely.data) {
+                window.optimizely.push("timeout");
+            }
+        }
+        setTimeout(optimizelyTimeout, 1000);
+
     </script>
 
 
@@ -95,16 +104,13 @@
 <header>
 
 
-
 </header>
-
-
 
 
 <section id="section1">
     <div class="container">
         <div class="row">
-          SECTION 1 ENGLSIH
+            SECTION 1 ENGLSIH
         </div>
     </div>
 
@@ -127,8 +133,6 @@
     </div>
 
 </section>
-
-
 
 
 <!--FOOTER-->
@@ -300,23 +304,21 @@
 </footer>
 
 
-
-
-
 <!-- Scripts -->
-<script src="../../_assets/project-name/js/plugins.js"></script>
-<!--<script src="../../en/project-name/fa/fa.js"></script>-->
+<script src="../../_assets/project-name/js/plugins.js" async></script>
+<script src="../../en/project-name/fa/fa.js"></script>
 
 
 <script src="../../_assets/project-name/js/scripts.js"></script>
-<script src="../../en/project-name/js/custom.js"></script>
-
-<!--<script type="text/javascript">-->
-    <!--wFORMS.behaviors.prefill.skip = false;-->
-<!--</script>-->
+<script src="../../en/project-name/js/custom.js" async></script>
 
 
-<script src="http://localhost:35729/livereload.js"></script>
+<script type="text/javascript">
+    wFORMS.behaviors.prefill.skip = false;
+</script>
+
+
+<!--<script src="http://localhost:35729/livereload.js"></script>-->
 
 
 </body>
