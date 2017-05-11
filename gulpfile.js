@@ -54,29 +54,29 @@ var IMGAGES_PATH = 'public/images/**/*.{png,jpeg,jpg,svg,gif}';
 // Styles for Solid CSS
 /*
 
-gulp.task('solid-styles', function (cb) {
-    console.log('----------Starting Styles Task----------');
+ gulp.task('solid-styles', function (cb) {
+ console.log('----------Starting Styles Task----------');
 
-    pump([
-            gulp.src(['public/css/reset.css', CSS_PATH]),
-             plumber(function (err) {
-             console.log('Styles Task Error');
-             console.log(err);
-             this.emit('end');
-             }),
-            sourcemaps.init(),
-            autoprefixer(),
-            concat('styles.css'),
-            cleanCSS(),
-            sourcemaps.write('.'),
-            gulp.dest(DIST_PATH),
-            livereload()
-        ],
-        cb
-    );
+ pump([
+ gulp.src(['public/css/reset.css', CSS_PATH]),
+ plumber(function (err) {
+ console.log('Styles Task Error');
+ console.log(err);
+ this.emit('end');
+ }),
+ sourcemaps.init(),
+ autoprefixer(),
+ concat('styles.css'),
+ cleanCSS(),
+ sourcemaps.write('.'),
+ gulp.dest(DIST_PATH),
+ livereload()
+ ],
+ cb
+ );
 
-});
-*/
+ });
+ */
 
 
 
@@ -102,12 +102,12 @@ gulp.task('styles', (cb) => {
 
             sourcemaps.init(),
             sass({sourcemap: true, style: 'compact', outputStyle:'compressed'}).on('error', sass.logError),
-            uncss({
-                html: ['public/**/*.html']
-            }),
+            // uncss({
+            //     html: ['public/**/*.html']
+            // }),
 
 
-             sourcemaps.write('.'),
+            sourcemaps.write('.'),
             gulp.dest(DIST_PATH + '/css'),
             livereload()
         ],
@@ -138,9 +138,9 @@ gulp.task('custom-styles', (cb) => {
             concat('custom.css'),
 
             sass({sourcemap: true, style: 'compact', outputStyle:'compressed'}).on('error', sass.logError),
-            uncss({
-                html: ['public/**/*.html']
-            }),
+            // uncss({
+            //     html: ['public/**/*.html']
+            // }),
 
             sourcemaps.write('.'),
             gulp.dest(DIST_PATH_HTML + '/css'),
@@ -169,14 +169,8 @@ gulp.task('fa-styles', function (cb) {
             }),
             sourcemaps.init(),
             autoprefixer(),
-            uncss({
-                html: ['public/**/*.html']
-            }),
-
             concat('fa.css'),
-
             cleanCSS(),
-
             sourcemaps.write('.'),
             gulp.dest(DIST_PATH_HTML + '/fa'),
             livereload()
@@ -189,9 +183,9 @@ gulp.task('fa-styles', function (cb) {
 
 gulp.task('fonts', function(cb) {
     pump([
-        gulp.src([
-        'node_modules/bootstrap-sass/assets/fonts/**/*']),
-             gulp.dest(DIST_PATH + '/fonts'),
+            gulp.src([
+                'node_modules/bootstrap-sass/assets/fonts/**/*']),
+            gulp.dest(DIST_PATH + '/fonts'),
         ],
         cb
     );
@@ -224,7 +218,7 @@ gulp.task('scripts', (cb) => {
 
 
 
-    ],
+        ],
 
 
         cb
@@ -271,7 +265,7 @@ gulp.task('fa-scripts', (cb) => {
     console.log('----------Starting Scripts Task----------');
 
     pump([
-            gulp.src(['public/_markets/' + MARKET + '/fa/wforms.js', 'public/_markets/' + MARKET + '/fa/*.js']),
+            gulp.src(['public/_markets/' + MARKET + '/fa/wforms.js', 'public/_markets/' + MARKET + '/fa/prefill.js', 'public/_markets/' + MARKET + '/fa/*.js']),
             plumber(function (err) {
                 console.log('Scripts Task Error');
                 console.log(err);
@@ -366,12 +360,12 @@ gulp.task('clean', () => {
 
 gulp.task('export', (cb) =>{
 
-pump([
-        gulp.src('public/_build/**/*'),
-        zip('website.zip'),
-        gulp.dest('./public')
-    ],
-     cb
+    pump([
+            gulp.src('public/_build/**/*'),
+            zip('website.zip'),
+            gulp.dest('./public')
+        ],
+        cb
     );
 });
 
