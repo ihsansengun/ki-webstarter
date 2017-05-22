@@ -205,13 +205,13 @@ gulp.task('scripts', (cb) => {
                 console.log(err);
                 this.emit('end');
             }),
-            sourcemaps.init(),
-            babel({
-                presets: ['es2015']
-            }),
+            // sourcemaps.init(),
+            // babel({
+            //     presets: ['es2015']
+            // }),
             uglify(),
             concat('scripts.js'),
-            sourcemaps.write('.'),
+            // sourcemaps.write('.'),
             gulp.dest(DIST_PATH + '/js'),
 
             livereload()
@@ -375,10 +375,14 @@ gulp.task('html', (cb) =>{
 
     pump([
             gulp.src(['public/_markets/' + MARKET + '/index.html']),
-            sourcemaps.init(),
-            htmlmin({collapseWhitespace: true}),
+            htmlmin({
+                collapseWhitespace: true,
+                removeComments: true,
+                removeEmptyAttributes: false,
+                removeEmptyElements: false
+                //lint: lint
+            }),
             concat('index.html'),
-            sourcemaps.write('.'),
 
             gulp.dest(DIST_PATH_HTML),
             livereload()

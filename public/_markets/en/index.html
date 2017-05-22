@@ -1,4 +1,7 @@
 <!doctype html>
+<meta http-equiv="Cache-control" content="public">
+
+
 <!--[if lt IE 7 ]>
 <html itemscope itemtype="https://schema.org/WebPage" id="ie6" class="ie" lang="en-US"><![endif]-->
 <!--[if IE 7 ]>
@@ -54,33 +57,49 @@
     <meta property="fb:app_id" content="">
     <meta property="fb:admins" content="">
 
+    <script>
+
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+
+    </script>
+
 
     <!-- CSS -->
-    <link rel="preload" href="../../en/project-name/fa/fa.css" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="../../_assets/project-name/css/styles.css" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="../../en/project-name/css/custom.css" as="style" onload="this.rel='stylesheet'">
+    <style>
 
-    <noscript>
-        <link rel="stylesheet" href="../../en/project-name/fa/fa.css">
-        <link rel="stylesheet" href="../../_assets/project-name/css/styles.css">
-        <link rel="stylesheet" href="../../en/project-name/css/custom.css">
 
-    </noscript>
+        section, footer {
+          display: none;
+
+        }
+
+
+
+
+
+    </style>
+
 
 
     <script>
-        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-        !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
-        /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
-        !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+
+        loadCSS( "https://fonts.googleapis.com/css?family=Lato" );
+        loadCSS( "../../en/project-name/fa/fa.css" );
+        loadCSS( "../../_assets/project-name/css/styles.css" );
+        loadCSS( "../../en/project-name/css/custom.css" );
+
     </script>
 
 
 
-    <!-- Optimizely -->
-    <script type="text/javascript">
+    <script>
+        // Optimizely
+
 
         (function () {
+            "use strict";
+
             var projectId = ['4238035597'];
             var protocol = ('https:' == document.location.protocol ?
                 'https://' : 'http://');
@@ -98,27 +117,21 @@
                 window.optimizely.push("timeout");
             }
         }
-        setTimeout(optimizelyTimeout, 1000);
+        setTimeout(optimizelyTimeout, 5000);
 
 
         // Tealium Tracking Tag
 
         var utag_data = {};
 
-        (function (a, b, c, d) {
-            "use strict";
-            a = '//tags.tiqcdn.com/utag/kaplan2/kie-english/prod/utag.js';
-            b = document;
-            c = 'script';
-            d = b.createElement(c);
-            d.src = a;
-            d.type = 'text/java' + c;
-            d.async = true;
-            a = b.getElementsByTagName(c)[0];
-            a.parentNode.insertBefore(d, a);
-        })();
 
+        (function(a,b,c,d){
+            a='//tags.tiqcdn.com/utag/kaplan2/kie-english/prod/utag.js';
+            b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+            a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+        })();
     </script>
+
 
 
 </head>
@@ -131,18 +144,163 @@
 
 
 <section id="section1">
-    <div class="container">
-        <div class="row">
-            SECTION 1 ENGLSIH
+
+    <section id="why-study">
+        <div class="container">
+            <div class="row">
+                <h1> WHY STUDY WITH KAPLAN</h1>
+                <h3>We're your first step to a bigger world</h3>
+                <div class="col-xs-12 col-md-6">
+                    <div id="Why-study-desc" class="why-study-desc">
+                        <h4>Kaplan is a trusted provider of excellence in education.</h4>
+                        We have over 75 years of teaching experience, helping millions of students improve their career
+                        prospects.
+                        <br> <br>
+                        Our philosophy is not to limit your education to classrooms and textbooks, but to enjoy the benefits
+                        of a fully immersive experience where you can continue to learn English outside of class, and with
+                        our specially developed K+ curriculum you’ll quickly advance in speaking, writing, and reading
+                        English.
+                        <br> <br>
+                        Teaching is our passion. We take great pride in ensuring that all our students have access to the
+                        best tools and opportunities to succeed when they leave our doors.
+                        <br> <br>
+                        You'll also love being able to explore new countries, expereince different cultures, gain lifelong
+                        friends and memories.
+                        <br> <br>
+                        <p><a class="cta-link" href="//kaplaninternational.com/about-kaplan-hub" target="_blank">DISCOVER MORE ABOUT KAPLAN</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+
+                    <div id="Video-box" class="video-box">
+                        <div id="video" class="videoWrapper" style="display: block;">
+                            <iframe src="//fast.wistia.net/embed/iframe/u1cx47fkp4" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+                            <script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </div>
+
+
+    </section>
+
 
 </section>
 
 <section id="section2">
     <div class="container">
         <div class="row">
-            SECTION 2
+            <!-- FORM: BODY SECTION -->
+            <div class="wFormContainer"  >
+
+
+                <div class=""><div class="wForm" id="tfa_0-WRPR" dir="ltr">
+                    <div class="codesection" id="code-tfa_0"></div>
+
+                    <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="tfa_0">
+                        <div id="tfa_70" class="section inline group">
+                            <input type="hidden" id="tfa_1" name="tfa_1" value="" class=""><input type="hidden" id="tfa_69" name="tfa_69" value="" class=""><input type="hidden" id="tfa_71" name="tfa_71" value="" class="">
+                        </div>
+                        <fieldset id="tfa_90" class="section">
+                            <legend id="tfa_90-L"><span > <b>Student Profile Details</b></span></legend>
+                            <div id="tfa_75" class="section group">
+                                <div id="tfa_76" class="section inline group">
+                                    <div class="oneField field-container-D    " id="tfa_2-D">
+                                        <label id="tfa_2-L" for="tfa_2" class="label preField "><b>First Name</b></label><br><div class="inputWrapper"><input type="text" id="tfa_2" name="tfa_2" value="" placeholder="" title="First Name" class=""></div>
+                                    </div>
+                                    <div class="oneField field-container-D    " id="tfa_3-D">
+                                        <label id="tfa_3-L" for="tfa_3" class="label preField "><b>Last Name</b></label><br><div class="inputWrapper"><input type="text" id="tfa_3" name="tfa_3" value="" placeholder="" title="Last Name" class=""></div>
+                                    </div>
+                                </div>
+                                <div id="tfa_77" class="section inline group">
+                                    <div class="oneField field-container-D    " id="tfa_13-D">
+                                        <label id="tfa_13-L" for="tfa_13" class="label preField "><b>E-mail Address</b></label><br><div class="inputWrapper"><input type="text" id="tfa_13" name="tfa_13" value="" placeholder="" title="E-mail Address" class=""></div>
+                                    </div>
+                                    <div class="oneField field-container-D    " id="tfa_7-D">
+                                        <label id="tfa_7-L" for="tfa_7" class="label preField "><b>Mobile Phone</b></label><br><div class="inputWrapper"><input type="text" id="tfa_7" name="tfa_7" value="" placeholder="" title="Mobile Phone" class=""></div>
+                                    </div>
+                                </div>
+                                <div class="oneField field-container-D    " id="tfa_23-D">
+                                    <label id="tfa_23-L" for="tfa_23" class="label preField "><b>Current UK Address</b></label><br><div class="inputWrapper"><textarea id="tfa_23" name="tfa_23" title="Current UK Address" class=""></textarea></div>
+                                </div>
+                                <div id="tfa_85" class="section inline group">
+                                    <div class="oneField field-container-D    " id="tfa_18-D">
+                                        <label id="tfa_18-L" for="tfa_18" class="label preField "><b>Emergency Contact First Name</b></label><br><div class="inputWrapper"><input type="text" id="tfa_18" name="tfa_18" value="" placeholder="" title="Emergency Contact First Name" class=""></div>
+                                    </div>
+                                    <div class="oneField field-container-D    " id="tfa_20-D">
+                                        <label id="tfa_20-L" for="tfa_20" class="label preField "><b>Emergency Contact Last Name</b></label><br><div class="inputWrapper"><input type="text" id="tfa_20" name="tfa_20" value="" placeholder="" title="Emergency Contact Last Name" class=""></div>
+                                    </div>
+                                </div>
+                                <div class="oneField field-container-D    " id="tfa_22-D">
+                                    <label id="tfa_22-L" for="tfa_22" class="label preField "><b>Emergency Contact Mobile Number</b></label><br><div class="inputWrapper"><input type="text" id="tfa_22" name="tfa_22" value="" placeholder="" title="Emergency Contact Mobile Number" class=""></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset id="tfa_89" class="section column">
+                            <legend id="tfa_89-L"><b>Questions</b></legend>
+                            <table class="columnLayout"><tr><td><div id="tfa_86" class="section group"><div id="tfa_87" class="section inline group">
+                                <div class="oneField field-container-D    " id="tfa_72-D">
+                                    <label id="tfa_72-L" for="tfa_72" class="label preField reqMark">Are you currently staying in Kaplan Accommodation?</label><br><div class="inputWrapper"><span id="tfa_72" class="choices horizontal required"><span class="oneChoice"><input type="radio" value="tfa_73" class="" id="tfa_73" name="tfa_72"><label class="label postField" id="tfa_73-L" for="tfa_73">Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_74" class="" id="tfa_74" name="tfa_72" data-conditionals="#tfa_64"><label class="label postField" id="tfa_74-L" for="tfa_74">No</label></span></span></div>
+                                </div>
+                                <div class="oneField field-container-D    " id="tfa_64-D">
+                                    <label id="tfa_64-L" for="tfa_64" class="label preField reqMark">Is your UK Address above&nbsp;still correct?&nbsp;</label><br><div class="inputWrapper"><span id="tfa_64" class="choices horizontal required" data-condition="`#tfa_74`"><span class="oneChoice"><input type="radio" value="tfa_65" class="" id="tfa_65" name="tfa_64"><label class="label postField" id="tfa_65-L" for="tfa_65">Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_66" class="" id="tfa_66" name="tfa_64" data-conditionals="#tfa_91,#tfa_59"><label class="label postField" id="tfa_66-L" for="tfa_66">No</label></span></span></div>
+                                </div>
+                                <div class="oneField field-container-D    " id="tfa_9-D">
+                                    <label id="tfa_9-L" for="tfa_9" class="label preField reqMark">Has your E-mail or Mobile Number Changed?&nbsp;</label><br><div class="inputWrapper"><span id="tfa_9" class="choices  required"><span class="oneChoice"><input type="checkbox" value="tfa_39" class="" id="tfa_39" name="tfa_39"><label class="label postField" id="tfa_39-L" for="tfa_39">No</label></span><span class="oneChoice"><input type="checkbox" value="tfa_10" class="" id="tfa_10" name="tfa_10" data-conditionals="#tfa_5,#tfa_91"><label class="label postField" id="tfa_10-L" for="tfa_10">Email Yes</label></span><span class="oneChoice"><input type="checkbox" value="tfa_11" class="" id="tfa_11" name="tfa_11" data-conditionals="#tfa_15,#tfa_91"><label class="label postField" id="tfa_11-L" for="tfa_11">Mobile Yes</label></span></span></div>
+                                </div>
+                                <div class="oneField field-container-D    " id="tfa_44-D">
+                                    <label id="tfa_44-L" for="tfa_44" class="label preField reqMark">Has your emergency contact details changed from above?</label><br><div class="inputWrapper"><span id="tfa_44" class="choices horizontal required"><span class="oneChoice"><input type="radio" value="tfa_45" class="" id="tfa_45" name="tfa_44" data-conditionals="#tfa_93,#tfa_52,#tfa_54,#tfa_50,#tfa_91"><label class="label postField" id="tfa_45-L" for="tfa_45">Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_46" class="" id="tfa_46" name="tfa_44"><label class="label postField" id="tfa_46-L" for="tfa_46">No</label></span></span></div>
+                                </div>
+                            </div></div></td></tr></table>
+                        </fieldset>
+                        <fieldset id="tfa_91" class="section" data-condition="`#tfa_10` OR `#tfa_11` OR `#tfa_45` OR `#tfa_66`">
+                            <legend id="tfa_91-L"><b>Update Studen</b>t&nbsp;</legend>
+                            <div id="tfa_92" class="section group">
+                                <div class="oneField field-container-D    " id="tfa_59-D">
+                                    <label id="tfa_59-L" for="tfa_59" class="label preField reqMark"><b>Please provide us with your&nbsp;updated UK Address.</b></label><br><div class="inputWrapper"><textarea id="tfa_59" name="tfa_59" data-condition="`#tfa_66`" title="Please provide us with your updated UK Address." class="required"></textarea></div>
+                                </div>
+                                <div id="tfa_83" class="section required inline group">
+                                    <label class="label preField" id="tfa_83-L"></label><br><div class="oneField field-container-D    " id="tfa_5-D">
+                                    <label id="tfa_5-L" for="tfa_5" class="label preField reqMark"><b>New E-mail Address</b></label><br><div class="inputWrapper"><input type="text" id="tfa_5" name="tfa_5" value="" placeholder="" data-condition="`#tfa_10`" title="New E-mail Address" class="validate-email required"></div>
+                                </div>
+                                    <div class="oneField field-container-D    " id="tfa_15-D">
+                                        <label id="tfa_15-L" for="tfa_15" class="label preField reqMark"><b>New Mobile Phone</b></label><br><div class="inputWrapper"><input type="text" id="tfa_15" name="tfa_15" value="" placeholder="" data-condition="`#tfa_11`" title="New Mobile Phone" class="validate-alphanum required"></div>
+                                    </div>
+                                </div>
+                                <div id="tfa_93" class="section group" data-condition="`#tfa_45`">
+                                    <label class="label preField" id="tfa_93-L"><b>Update Emergency Contact Details</b></label><br><div id="tfa_94" class="section inline group">
+                                    <div class="oneField field-container-D    " id="tfa_50-D">
+                                        <label id="tfa_50-L" for="tfa_50" class="label preField reqMark"><b>New Emergency Contact First Name&nbsp;</b></label><br><div class="inputWrapper"><input type="text" id="tfa_50" name="tfa_50" value="" placeholder="" data-condition="`#tfa_45`" title="New Emergency Contact First Name " class="required"></div>
+                                    </div>
+                                    <div class="oneField field-container-D    " id="tfa_52-D">
+                                        <label id="tfa_52-L" for="tfa_52" class="label preField reqMark">N<b>ew Emergency Contact Last Name</b></label><br><div class="inputWrapper"><input type="text" id="tfa_52" name="tfa_52" value="" placeholder="" data-condition="`#tfa_45`" title="New Emergency Contact Last Name" class="required"></div>
+                                    </div>
+                                    <div class="oneField field-container-D    " id="tfa_54-D">
+                                        <label id="tfa_54-L" for="tfa_54" class="label preField reqMark"><b>New Emergency Contact Mobile Numbe</b>r</label><br><div class="inputWrapper"><input type="text" id="tfa_54" name="tfa_54" value="" placeholder="" data-condition="`#tfa_45`" title="New Emergency Contact Mobile Number" class="required"></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="actions" id="tfa_0-A"><input type="submit" class="primaryAction" id="submit_button" value="Submit"></div>
+                        <div style="clear:both"></div>
+                        <input type="hidden" value="4615527" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="6d981fe56151fc9da2cffec77765d008" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="54" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+                    </form>
+                </div></div>
+
+                <p class="supportInfo" >
+                    <a href="https://www.tfaforms.com/forms/help/4615527" target="new" style="font-size: 0.7em;">
+                        Need assistance with this form?    </a>
+
+                </p>
+
+            </div>
         </div>
     </div>
 
@@ -327,11 +485,21 @@
 </footer>
 
 
-<!-- Scripts -->
-<script src="../../_assets/project-name/js/plugins.js"></script>
-<script src="../../en/project-name/fa/fa.js"></script>
-<script src="../../_assets/project-name/js/scripts.js"></script>
-<script src="../../en/project-name/js/custom.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="../../_assets/project-name/js/plugins.js" async></script>
+<script src="../../en/project-name/fa/fa.js"  defer></script>
+<script src="../../_assets/project-name/js/scripts.js" async></script>
+<script src="../../en/project-name/js/custom.js" async></script>
+
 
 
 
