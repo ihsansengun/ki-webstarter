@@ -2,7 +2,7 @@
 
 // Project Options
 var MARKET = "en";
-var PROJECT_NAME = "project-name";
+var PROJECT_NAME = "midtail";
 
 
 var gulp  = require('gulp');

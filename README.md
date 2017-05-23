@@ -1,4 +1,4 @@
-# KI-WEB Starter
+## KI-WEB Starter
 KI starter kit for your front-end builds.
 
 - Compiles, autoprefixes and minimizes your Scss
@@ -6,7 +6,7 @@ KI starter kit for your front-end builds.
 - Compresses your Images
 - Live reload
 
-## Require  ##
+###  Require  ##
 1) Install nodejs: http://nodejs.org/ 
 
 ### Getting Started
@@ -16,7 +16,7 @@ KI starter kit for your front-end builds.
 Once you have cloned the repo, navigate in to the directory via terminal and run.
 
 
-1) Intall Project Modules
+1) Install Project Modules
 > $ npm install
 
 2) Run and Build in Browser
